@@ -7,13 +7,13 @@ const Navigation = () => {
     <div class="navbar">
         <div class="logo">Your Logo</div>
         <div class="nav-links">
-            <a href="#">Home</a>
+            <NavLink to='/'>Home</NavLink>
             <a href="#">About</a>
             <a href="#">Services</a>
         </div>
         <div class="user-links">
-            <a href="#">Profile</a>
-            <a href="#">Logout</a>
+            <NavLink to='/profile'>Profile</NavLink>
+            <NavLink to='/login'>Login</NavLink>
         </div>
     </div>
   )

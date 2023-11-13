@@ -42,3 +42,8 @@
     color: #1890ff; /* Hover color */
     border-bottom: 1px solid #ff69b4;
 }
+
+.active {
+    color: #1890ff; /* Hover color */
+    border-bottom: 1px solid #ff69b4;
+}
