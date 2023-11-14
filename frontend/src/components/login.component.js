@@ -3,16 +3,20 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { useState } from "react";
 import * as Yup from 'yup';
 
-export default function Login() {
+export default function LoginComp() {
     const [initialValues, setInitialValues] =useState({
-        userid : '',
-        password : '',
+        userid :'',
+        password :'',
     })
     const validationSchema = Yup.object({
         userid:Yup.string().required('userId is required'),
         password:Yup.string().required('please enter your password'),
 
     })
+    const onSubmit = (values) => {
+        console.log(values);
+    }
+
     return (
         <>
 
@@ -34,23 +38,37 @@ export default function Login() {
                     }) => (
                         <Form>
                             <div className="row" >
-                                <div className='col-6'>
+                                <div className='col-10'>
                                     <Input
                                         placeholder='userId' 
-                                        value={values.userid}/>
+                                        itemType="text"
+                                        id='userid'
+                                        value={values.userid}
+                                        onChange={(event)=>{
+                                            console.log(event.target.value)
+                                            setFieldValue('userid', event.target.value)
+                                        }}/>
                                 </div>
+                                
 
                             </div>
                             <div className="row">
-                                <div className='col-6'>
+                                <div className='col-10'>
                                     <Input type='password'
+                                    id='password'
                                         placeholder='password' 
-                                        value={values.password}/>
+                                        value={values.password}
+                                        onChange={(event)=>{
+                                            console.log(event.target.value)
+                                            setFieldValue('password', event.target.value)
+                                        }}/>
                                 </div>
                             </div>
                             <div className="row d-flex flex-row align-items-center justify-content-center">
                                 <div className='col-8'>
-                                    <button className='btn btn-success' disabled={isValid}>Login</button>
+                                    <button className='btn btn-outline-primary'   disabled={!isValid}  type="submit" onChange={()=>{
+                                        console.log(values)
+                                    }}>Login</button>
                                 </div>
                             </div>
                         </Form>
