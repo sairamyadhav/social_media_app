@@ -2,6 +2,8 @@ import { Input } from "antd"
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { useState } from "react";
 import * as Yup from 'yup';
+import UserService from "../services/UserServices";
+import AxiosService from "../services/AxiousService";
 
 export default function LoginComp() {
     const [initialValues, setInitialValues] =useState({
@@ -15,6 +17,11 @@ export default function LoginComp() {
     })
     const onSubmit = (values) => {
         console.log(values);
+        console.log(UserService.UserLogin)
+        const response = AxiosService(UserService.UserLogin, 'post', values)
+        response.then((res) => {
+            console.log(res)
+        })
     }
 
     return (
