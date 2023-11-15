@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-^r4b&1ikz*uj-w@(7&3of#3=2di+l__sns_@sn%r^ipusd6!a0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -165,7 +165,39 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+CORS_ALLOW_ORIGIN_WHITELIST = ['http://localhost:3000']  # Update with your frontend URL
 
+CORS_ALLOW_METHODS = (
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+)
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_HEADERS = (
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+    '_auth_user_id',
+    'csrftoken',
+    'set-cookie',
+    'cookies',
+    'cookie'
+)
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    # Add any other origins as needed
+]
+
+CORS_ALLOW_CREDENTIALS = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
