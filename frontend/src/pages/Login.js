@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import LoginComp from '../components/login.component';
-import Register from '../components/register.component';
+import LoginComp from '../components/login';
+import Register from '../components/register';
 import { Radio } from 'antd';
 
 const Login = () => {
