@@ -1,6 +1,8 @@
 import { Input } from "antd";
 import { Formik, Form } from "formik";
 import { LoginFormValidationSchema } from "../base/FormValidationSchemas";
+import AxiosService from "../services/AxiousService";
+import UserService from "../services/UserServices";
 
 export default function LoginComp() {
   const initialValues = {
@@ -10,6 +12,8 @@ export default function LoginComp() {
   const validationSchema = LoginFormValidationSchema;
   const onSubmit = (values) => {
     console.log(values);
+    const res = AxiosService(UserService.UserLogin, 'post', values)
+    res.then((res) => { console.log(res)})
   };
 
   return (
