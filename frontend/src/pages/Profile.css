@@ -1,0 +1,20 @@
+.section {
+      display: grid;
+      grid-template-columns: 25% 75%;
+      height: 100%;
+}
+
+.left-section,
+.right-section {
+    height: 100%;
+    box-sizing: border-box;
+    margin: 0.5em;
+}
+
+.left-section {
+    background-color: #eee;
+}
+
+.right-section {
+    background-color: #ddd;
+}
